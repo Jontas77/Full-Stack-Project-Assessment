@@ -10,7 +10,7 @@ const App = () => {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch(`/`)
+    fetch("/api/v1/videos")
     .then(res => res.json())
     .then(data => setData(data))
   }, []);
