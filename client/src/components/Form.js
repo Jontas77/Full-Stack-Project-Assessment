@@ -7,7 +7,7 @@ const Form = ({ removeForm }) => {
    e.preventDefault();
    try {
      const body = user;
-     const response = await fetch(`http://localhost:5000`, {
+     const response = await fetch(`/api/v1/videos`, {
        method: "POST",
        headers: { "Content-Type": "application/json" },
        body: JSON.stringify(body)

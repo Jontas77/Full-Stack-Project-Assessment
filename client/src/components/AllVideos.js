@@ -10,7 +10,7 @@ const AllVideos = ({ data }) => {
   const incrementVote = async (id) => {
     try {
       const body = { rating };
-      await fetch(`http://localhost:5000/incr/${id}`, {
+      await fetch(`/api/v1/videos/incr/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
@@ -24,7 +24,7 @@ const AllVideos = ({ data }) => {
   const decrementVote = async (id) => {
     try {
       const body = { rating };
-      await fetch(`http://localhost:5000/decr/${id}`, {
+      await fetch(`/api/v1/videos/decr/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
@@ -37,7 +37,7 @@ const AllVideos = ({ data }) => {
 
   const deleteVideo = async (id) => {
     try {
-      await fetch(`http://localhost:5000/${id}`, {
+      await fetch(`/api/v1/videos/${id}`, {
         method: "DELETE"
       });
       setVideo(video.filter((value) => value.id !== id));
