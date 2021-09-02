@@ -26,7 +26,6 @@ const AddVideo = async (req, res) => {
   };
 
   const { id, title, vidurl, rating } = newVideo;
-  console.log(vidurl)
     const myURL = new URL(vidurl);
     if (!title || title === "" || !vidurl || vidurl === "") {
       return res.status(400).json({

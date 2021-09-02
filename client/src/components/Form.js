@@ -12,6 +12,7 @@ const Form = ({ removeForm }) => {
        headers: { "Content-Type": "application/json" },
        body: JSON.stringify(body)
      });
+     if (response.status === 400) alert("Please enter a valid url!");
      setUser(response);
      window.location = "/";
    } catch (error) {
